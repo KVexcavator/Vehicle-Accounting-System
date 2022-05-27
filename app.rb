@@ -1,5 +1,11 @@
-require 'sinatra'
+require "sinatra/base"
+require "sinatra/activerecord"
+require "bcrypt"
 
-get  '/' do
-  'hello, world!'
+class Vas < Sinatra::Base
+  register Sinatra::ActiveRecordExtension
+
+  get '/' do
+    "This is connected to ....."
+  end
 end

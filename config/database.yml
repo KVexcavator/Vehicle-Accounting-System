@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  port: <%= ENV['DATABASE_PORT'] || '5432' %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: vas-development
+
+test:
+  <<: *default
+  database: vas-test
+
+production:
+  <<: *default
+  database: vas-production

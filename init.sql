@@ -1,0 +1,2 @@
+CREATE USER barmaley;
+ALTER USER barmaley WITH SUPERUSER;
