@@ -6,6 +6,14 @@ class Vas < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
   get '/' do
-    "This is connected to ....."
+    erb :index
+  end
+
+  get '/moderator' do
+    erb :moderator
+  end
+
+  get '/admin'  do
+    erb :admin
   end
 end
