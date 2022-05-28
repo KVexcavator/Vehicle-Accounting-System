@@ -9,21 +9,21 @@
       <label for="mark">Mark:</label>
       <select id="mark" name="vehicle[mark]" required>
         <option value="">Select Mark</option>
-        <% @marks.each do |m| %>
+        <% MARKS.each do |m| %>
           <option value=<%= m %> ><%= m %></option>
         <% end %>
       </select>
       <label for="model">Model:</label>
       <select id="model" name="vehicle[model]" required>
         <option value="">Select Model</option>
-        <% @models.each do |m| %>
+        <% MODELS.each do |m| %>
           <option value=<%= m %> ><%= m %></option>
         <% end %>
       </select>
       <label for="prod_year">Prodaction year:</label>
       <select id="prod_year" name="vehicle[prod_year]" required>
         <option value="">Select year</option>
-        <% @years.each do |y| %>
+        <% YEARS.each do |y| %>
           <option value=<%= y %> ><%= y %></option>
         <% end %>
       </select>

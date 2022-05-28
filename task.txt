@@ -44,9 +44,3 @@ Ruby/Postgres
            “S2000"
        ]
    }
------------------------------------------
-docker-compose exec [service name] [command]
-docker-compose run web bash
-
-$ rake db:create_migration NAME=vehicles
-sudo chown -R $USER <path-to-folder>

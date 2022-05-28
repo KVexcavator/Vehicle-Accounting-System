@@ -1,3 +1,64 @@
 <div>
-  <h1>I m admin</h1>
+  <h1><%= @msg || "Whe is my session data?"%></h1>
+  <fieldset>
+    <legend>Count:</legend>
+    <form method="POST" action="/admin/uniq">
+      <label for="mark">Mark:</label>
+      <select id="mark" name="vehicle[mark]">
+        <% MARKS.each do |m| %>
+          <option value=<%= m %> ><%= m %></option>
+        <% end %>
+      </select>
+      <label for="model">Model:</label>
+      <select id="model" name="vehicle[model]">
+        <% MODELS.each do |m| %>
+          <option value=<%= m %> ><%= m %></option>
+        <% end %>
+      </select>
+      <label for="prod_year">Prodaction year:</label>
+      <select id="prod_year" name="vehicle[prod_year]">
+        <% YEARS.each do |y| %>
+          <option value=<%= y %> ><%= y %></option>
+        <% end %>
+      </select>
+      <input type="submit" value="Query Vehicles">
+      <h1>Uniq Auto: <%= @uniqum || "Whe is my uniqum auto?"%></h1>
+    </form>
+  </fieldset>
+
+  <fieldset>
+    <legend>Period:</legend>
+    <form method="POST" action="/admin/added">
+      <label for="days">Days ago:</label>
+      <input id="days" type="number" name="period[days]"  min="1" max="10">
+      <input type="submit" value="Query Period">
+      <h1>Added Auto: <%= @added || "Whe is my added auto?"%></h1>
+    </form>
+  </fieldset>
+
+  <fieldset>
+    <legend>Repeat:</legend>
+    <form method="POST" action="/admin/repeated">
+      <input type="submit" value="Query Repeated Auto">
+      <h1>Repeated Auto: <%= @repeated || "Whe is my repeated auto?"%></h1>
+    </form>
+  </fieldset>
+  <div>
+    <table>
+      <tr>
+        <th>Regictration</th>
+        <th>Mark</th>
+        <th>Model</th>
+        <th>Prodaction</th>
+      </tr>
+      <% @vehicles.each do |v| %>
+      <tr>
+        <td><%= v.reg_number %></td>
+        <td><%= v.mark %></td>
+        <td><%= v.model %></td>
+        <td><%= v.prod_year %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
