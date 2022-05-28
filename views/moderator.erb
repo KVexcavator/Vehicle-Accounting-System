@@ -1,1 +1,33 @@
-<h1>I am moderator</h1>
+<div>
+  <h1>Add A New Vehicle</h1>
+  <p>Vehicle count <%= @count %></p>
+  <fieldset>
+    <legend>Form:</legend>
+    <form method="POST" action="/add">
+      <label for="reg_number"> Regictration number:</label>
+      <input id="reg_number" type="text" name="vehicle[reg_number]" required>
+      <label for="mark">Mark:</label>
+      <select id="mark" name="vehicle[mark]" required>
+        <option value="">Select Mark</option>
+        <% @marks.each do |m| %>
+          <option value=<%= m %> ><%= m %></option>
+        <% end %>
+      </select>
+      <label for="model">Model:</label>
+      <select id="model" name="vehicle[model]" required>
+        <option value="">Select Model</option>
+        <% @models.each do |m| %>
+          <option value=<%= m %> ><%= m %></option>
+        <% end %>
+      </select>
+      <label for="prod_year">Prodaction year:</label>
+      <select id="prod_year" name="vehicle[prod_year]" required>
+        <option value="">Select year</option>
+        <% @years.each do |y| %>
+          <option value=<%= y %> ><%= y %></option>
+        <% end %>
+      </select>
+      <input type="submit" value="Save Vehicle">
+    </form>
+  </fieldset>
+</div>

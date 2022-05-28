@@ -1,6 +1,5 @@
 APP_ROOT = File.expand_path("..", __dir__)
 Dir.glob(File.join(APP_ROOT, "app", "*.rb")).each { |file| require file }
-Dir.glob(File.join(APP_ROOT, "lib", "*.rb")).each { |file| require file }
 require File.join(APP_ROOT, "config", "database")
 
 class Vas < Sinatra::Base
